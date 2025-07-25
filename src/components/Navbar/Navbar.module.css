@@ -1,0 +1,72 @@
+.navbarMain {
+  flex: 1;
+}
+
+.header {
+  padding-bottom: var(--mantine-spacing-md);
+  margin-bottom: calc(var(--mantine-spacing-md) * 1.5);
+  border-bottom: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.footer {
+  padding-top: var(--mantine-spacing-md);
+  margin-top: var(--mantine-spacing-md);
+  border-top: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-1));
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  border-radius: var(--mantine-radius-sm);
+  font-weight: 500;
+
+  @mixin hover {
+    background-color: light-dark(
+      rgba(154, 209, 178, 0.1),
+      rgba(154, 209, 178, 0.2)
+    );
+    color: light-dark(#4a5568, #e2e8f0);
+
+    .linkIcon {
+      color: #9ad1b2;
+    }
+  }
+
+  &[data-active] {
+    &,
+    &:hover {
+      background-color: rgba(154, 209, 178, 0.2);
+      color: #4a5568;
+
+      .linkIcon {
+        color: #9ad1b2;
+      }
+    }
+  }
+}
+
+.linkIcon {
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-2));
+  margin-right: var(--mantine-spacing-sm);
+  width: 25px;
+  height: 25px;
+}
+
+/* ステータスアイコン用のスタイル */
+.statusNormal {
+  color: #9ad1b2;
+}
+
+.statusCaution {
+  color: #f9a826;
+}
+
+.statusAbnormal {
+  color: #f06c5b;
+}
